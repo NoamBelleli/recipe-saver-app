@@ -1,9 +1,9 @@
 import express from 'express';
 import { getRecipes, createRecipe, editRecipe, deleteRecipe } from '../controllers/recipeController.js';
 
-const router = express.Router();
+const recipeRouter = express.Router();
 
-router.route('/').get(getRecipes).post(createRecipe)
-router.route('/:id').put(editRecipe).delete(deleteRecipe)
+recipeRouter.route('/').get(getRecipes).post(createRecipe)
+recipeRouter.route('/:id').put(editRecipe).delete(deleteRecipe)
 
-export default router;
+export default recipeRouter;
