@@ -1,10 +1,8 @@
 import asyncHandler from 'express-async-handler'
 import mongoose from 'mongoose';
-import userModel from '../models/userModel.js';
+import {User} from '../models/userModel.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
-
-const User = mongoose.model('User', userModel);
 
 
 //@desc Register new user
@@ -88,6 +86,5 @@ const generateToken = (id) => {
     expiresIn:'30d',
   })
 }
-
 
 export { registerUser, loginUser, getMe };
